@@ -33,8 +33,8 @@ Batch size: 1, input_sequence_length: 128, max_sequence_length: 128.
 --------------------
 The time of QKV with fused_qkv False is: 	0.13480520186324915.
 The time of q*k (without softmax) is: 		0.023315586149692535.
-The time of qk_weight * v is: 			    0.023320985751019582.
+The time of qk_weight * v is: 			0.023320985751019582.
 The time of ffn with hidden_act relu is: 	0.20547565590176317.
 The time of q*cached_k(sequence_length from 0 to 128) (without softmax) in decoding is: 11.440430050715804.
-The time of qk_weight*cached_v(sequence_length from 0 to 128) in decoding is: 		    11.993675859024126.
+The time of qk_weight*cached_v(sequence_length from 0 to 128) in decoding is: 		11.993675859024126.
 ```

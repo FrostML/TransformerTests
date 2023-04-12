@@ -12,18 +12,18 @@ python performance.py
 
 * `--hidden-size`：模型隐层大小。默认为 1024。
 * `--ffn-inter-size`：FFN 中间隐层大小。默认为 None，表示使用 `hidden_size * 4` 作为其值。
-* `--hidden-act`：FFN 中间激活函数类型也包括 FFN 组网类型。可设置为 `relu`，`gelu`，`silu`，`gated-relu`，`gated-gelu`，`gated-silu`。
-* `--head-num`：多头注意力机制中头的数目。
-* `--input-dtype`：输入的数据类型。目前支持 `bfloat16`，`float16`，`float32`，`float64`。不支持 `int8`。
-* `--max-sequence-length`：生成使用的最长输出长度。
-* `--input-sequence-length`：模拟的输入的长度。
+* `--hidden-act`：FFN 中间激活函数类型也包括 FFN 组网类型。可设置为 `relu`，`gelu`，`silu`，`gated-relu`，`gated-gelu`，`gated-silu`。默认为 `relu`。
+* `--head-num`：多头注意力机制中头的数目。默认为 16。
+* `--input-dtype`：输入的数据类型。目前支持 `bfloat16`，`float16`，`float32`，`float64`。不支持 `int8`。默认为 `float32`。
+* `--max-sequence-length`：生成使用的最长输出长度。默认为 128。
+* `--input-sequence-length`：模拟的输入的长度。默认为 128。
 * `--fused-qkv`：是否将 qkv 的矩阵乘融合。
-* `--tensor-parallel-size`：tensor 并行的大小。不会跑多卡，会将设定的模型超参 size 进行切分后，在单卡上进行测试。
+* `--tensor-parallel-size`：tensor 并行的大小。不会跑多卡，会将设定的模型超参 size 进行切分后，在单卡上进行测试。默认为 1。
 * `--inference-model-dir`：输出 inference 模型的位置，一般可以不用设置。
-* `--device`：执行性能测试用的设备，即 inference config 所指定的设备。
+* `--device`：执行性能测试用的设备，即 inference config 所指定的设备。默认为 GPU。
 * `--use-mkl`：Inference 是否开启 MKL。
-* `--threads`：Inference 设置线程数。
-* `--batch-size`：性能测试使用的 batch size 大小。
+* `--threads`：Inference 设置线程数。默认为 1。
+* `--batch-size`：性能测试使用的 batch size 大小。默认为 1。
 
 性能数据输出结果为：
 
